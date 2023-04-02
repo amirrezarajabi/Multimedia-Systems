@@ -16,9 +16,6 @@ actions that are implemented:
 
 *   **clicking mouse** : throw a bomb from where the mouse is clicked, The **longer** the click, the **higher** the bomb goes.
 
-This is the sound effect that i choose:
-https://github.com/amirrezarajabi/Multimedia-Systems/blob/main/fireworks/fireworks.mp3
-
 ## Results
 
 
