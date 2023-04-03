@@ -35,7 +35,7 @@ void draw()
   color(255, 255, 255);
   if (numTrue < 1){
     for (int i = 0; i < (int)(random(maxAdd)); i++){
-        addParticle(true, (int)(random(width)), height, 150, 15);
+        addParticle(true, (int)(random(width)), height, 150, 10);
     }
   }
   for (int i = 0; i < particles.size(); i++)
@@ -64,7 +64,7 @@ void mouseReleased()
 {
     int mouseTime = millis() - mousePressedTime;
     mouseTime = mouseTime / 100;
-    addParticleByMouse(true, mouseX, mouseY, 150, 15, - mouseTime);
+    addParticleByMouse(true, mouseX, mouseY, 150, 10, - mouseTime);
 }
 void addParticle(boolean type, int x, int y, int life_time, int size){
     int index = (int)random(12);
@@ -127,17 +127,22 @@ void keyPressed()
 {
     if (key == '1'){
         for (int i = 0; i < 10 + (int)random(10); i++){
-            addParticle(true, (int)(random(width)), height, 150, 15);
+            addParticle(true, (int)(random(width)), height, 150, 10);
         }
     }
     if (key == '3'){
-        for (int i = 0; i < 10 + (int)random(10); i++){
-            addParticleByKey(true, 0, (int)(random(height)), 150, 15, 5);
+        for (int i = width; i > 0; i--){
+            if (random(100) > 95){ 
+              int j = width - i; 
+              addParticle(true, i, height, 200 - (int)(j / 3), 10);
+            }
         }
     }
     if (key == '2'){
-        for (int i = 0; i < 10 + (int)random(10); i++){
-            addParticleByKey(true, width, (int)(random(height)), 150, 15, -5);
+        for (int i = 0; i < width; i++){
+            if (random(100) > 95){ 
+              addParticle(true, i, height, 200 - (int)(i / 3), 10);
+            }
         }
     }
     if (key == 'q'){
